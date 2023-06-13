@@ -38,6 +38,7 @@ export default function ProductInfo() {
             <object data={plus} type="image/svg+xml"></object>
           </button>
         </div>
+        {/* TODO: change colors finish up spacing */}
         <button className="flex space-x-2 bg-orange px-4 text-white py-3">
             <object data={cart} type="image/svg+xml"></object>
             <span>Add to cart</span>
