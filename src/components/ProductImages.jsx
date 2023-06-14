@@ -12,7 +12,7 @@ export default function ProductImages() {
     <div className="space-y-4 ">
       {/* slider here */}
       <div className="relative">
-        <button className="absolute flex justify-center items-center -translate-y-1/2 top-1/2 left-4 bg-white w-10 h-10 rounded-full">
+        <button className="md:hidden absolute flex justify-center items-center -translate-y-1/2 top-1/2 left-4 bg-white w-10 h-10 rounded-full">
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M11 1 3 9l8 8"
@@ -23,7 +23,7 @@ export default function ProductImages() {
             />
           </svg>
         </button>
-        <button className="absolute flex justify-center items-center -translate-y-1/2 top-1/2 right-4 bg-white w-10 h-10 rounded-full">
+        <button className="md:hidden absolute flex justify-center items-center -translate-y-1/2 top-1/2 right-4 bg-white w-10 h-10 rounded-full">
           <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
             <path
               d="m2 1 8 8-8 8"
