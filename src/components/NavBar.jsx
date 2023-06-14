@@ -1,10 +1,11 @@
 import cart from "../assets/images/icon-cart.svg";
 import profile from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
+import Cart from "./Cart";
 
 export default function NavBar() {
   return (
-    <header className="w-full md:max-w-6xl mx-auto px-5 flex justify-between items-center py-4 md:py-8 md:border-b">
+    <header className="relative w-full md:max-w-6xl mx-auto px-5 flex justify-between items-center py-4 md:py-8 md:border-b">
       <nav className="flex items-center space-x-4">
         <button className="block md:hidden">
           <img src={hamburger} alt="" />
@@ -35,6 +36,7 @@ export default function NavBar() {
           <img width="45" height="45" src={profile} alt="" />
         </button>
       </div>
+      <Cart />
     </header>
   );
 }

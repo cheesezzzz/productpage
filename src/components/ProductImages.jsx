@@ -34,7 +34,7 @@ export default function ProductImages() {
             />
           </svg>
         </button>
-        <div className="flex">
+        <div className="flex overflow-hidden">
           <img className=" w-full md:rounded-2xl" src={img1} alt="" />
           <img className="md:hidden w-full md:rounded-2xl" src={img2} alt="" />
           <img className="md:hidden w-full md:rounded-2xl" src={img3} alt="" />
