@@ -1,8 +1,18 @@
 import img1 from "../assets/images/image-product-1.jpg";
+import { motion } from "framer-motion";
 
 export default function Cart() {
   return (
-    <div className="absolute z-50 left-1/2 -translate-x-1/2 bg-white shadow-2xl w-[95vw] md:w-80 md:right-2 md:left-auto -bottom-60 md:-translate-x-0 rounded-md">
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      }}
+      className="absolute z-50 left-1/2 -translate-x-1/2 bg-white shadow-2xl w-[95vw] md:w-80 md:right-2 md:left-auto -bottom-60 md:-translate-x-0 rounded-md"
+    >
       <p className="p-4 border-b  border-b-light-gray-blue font-bold">Cart</p>
       <div className="p-5 space-y-4">
         <div className="flex space-x-4 w-full justify-between">
@@ -40,6 +50,6 @@ export default function Cart() {
           Checkout
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

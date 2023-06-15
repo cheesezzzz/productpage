@@ -7,6 +7,7 @@ import imgthumbnail2 from "../assets/images/image-product-2-thumbnail.jpg";
 import imgthumbnail3 from "../assets/images/image-product-3-thumbnail.jpg";
 import imgthumbnail4 from "../assets/images/image-product-4-thumbnail.jpg";
 
+
 export default function ProductImages() {
   return (
     <div className="space-y-4 ">

@@ -1,9 +1,17 @@
+/* eslint-disable react/prop-types */
 import cart from "../assets/images/icon-cart.svg";
 import profile from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
 import Cart from "./Cart";
+import { useState } from "react";
 
-export default function NavBar() {
+export default function NavBar({cartItems}) {
+  const [showCart, setShowCart] = useState(false)
+
+  const toggleCart = () => {
+    setShowCart(prevCart => !prevCart)
+  }
+
   return (
     <header className="relative w-full md:max-w-6xl mx-auto px-5 flex justify-between items-center py-4 md:py-8 md:border-b">
       <nav className="flex items-center space-x-4">
@@ -25,18 +33,18 @@ export default function NavBar() {
       </nav>
       {/* Dynamic Elements here */}
       <div className="flex items-center space-x-10">
-        <button className="relative">
+        <button onClick={toggleCart} className="relative">
           <img width="30" src={cart} alt="" />
           <div className="absolute bg-orange -top-2 rounded-full w-6 -right-2 text-xs text-white font-bold">
             {/* cart counter here */}
-            <span>0</span>
+            <span>{cartItems}</span>
           </div>
         </button>
         <button>
           <img width="45" height="45" src={profile} alt="" />
         </button>
       </div>
-      <Cart />
+      {showCart ? <Cart cartState={showCart} /> : null}
     </header>
   );
 }
