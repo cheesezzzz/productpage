@@ -4,18 +4,29 @@ import profile from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
 import Cart from "./Cart";
 import { useState } from "react";
+import MenuNav from "./MenuNav";
 
-export default function NavBar({cartItems}) {
-  const [showCart, setShowCart] = useState(false)
+export default function NavBar({
+  cartItems,
+  cartItemDisplay,
+  changeItemDisplay,
+  numberOfItems,
+}) {
+  const [showCart, setShowCart] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleCart = () => {
-    setShowCart(prevCart => !prevCart)
-  }
+    setShowCart((prevCart) => !prevCart);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen((toggleMenu) => !toggleMenu);
+  };
 
   return (
     <header className="relative w-full md:max-w-6xl mx-auto px-5 flex justify-between items-center py-4 md:py-8 md:border-b">
       <nav className="flex items-center space-x-4">
-        <button className="block md:hidden">
+        <button onClick={toggleMenu} className="block md:hidden">
           <img src={hamburger} alt="" />
         </button>
         <div className="flex space-x-10 items-center">
@@ -23,11 +34,22 @@ export default function NavBar({cartItems}) {
             <img src="./src/assets/images/logo.svg" alt="sneakers logo" />
           </a>
           <div className=" space-x-5 hidden md:flex">
-            <a href="">Collections</a>
-            <a href="">Men</a>
-            <a href="">Women</a>
-            <a href="">About</a>
-            <a href="">Contact</a>
+            <a className="hover:font-semibold duration-100" href="">
+              <span>Collections</span>
+              <span></span>
+            </a>
+            <a className="hover:font-semibold duration-100" href="">
+              <span>Men</span>
+            </a>
+            <a className="hover:font-semibold duration-100" href="">
+              <span>Women</span>
+            </a>
+            <a className="hover:font-semibold duration-100" href="">
+              <span>About</span>
+            </a>
+            <a className="hover:font-semibold duration-100" href="">
+              <span>Contact</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -40,11 +62,22 @@ export default function NavBar({cartItems}) {
             <span>{cartItems}</span>
           </div>
         </button>
-        <button>
-          <img width="45" height="45" src={profile} alt="" />
+        <button className="group">
+          <img className="group-hover:border-2 group-hover:border-orange rounded-full duration-100" width="45" height="45" src={profile} alt="" />
         </button>
       </div>
-      {showCart ? <Cart cartState={showCart} /> : null}
+      {isMenuOpen ? (
+        <MenuNav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      ) : null}
+      {showCart ? (
+        <Cart
+          
+          showCart={showCart}
+          cartItem={cartItemDisplay}
+          onCartChange={changeItemDisplay}
+          numberOfItems={numberOfItems}
+        />
+      ) : null}
     </header>
   );
 }

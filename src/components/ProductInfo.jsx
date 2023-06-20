@@ -2,7 +2,16 @@
 import minus from "../assets/images/icon-minus.svg";
 import plus from "../assets/images/icon-plus.svg";
 
-export default function ProductInfo({onIncrement, onDecrement, items, onAddToCart}) {
+export default function ProductInfo({
+  onIncrement, 
+  onDecrement, 
+  items, 
+  onAddToCart, 
+  title, 
+  description, 
+  price, 
+  discount, 
+}) {
 
   return (
     <div className="space-y-8 px-5 mt-10 md:mt-0">
@@ -10,18 +19,16 @@ export default function ProductInfo({onIncrement, onDecrement, items, onAddToCar
         <span className="uppercase text-orange font-semibold text-sm">
           sneaker company
         </span>
-        <h1 className="text-4xl font-bold">Fall Limited Edition Sneakers</h1>
+        <h1 className="text-4xl font-bold">{title}</h1>
         <p className="mt-8 text-dark-gray-blue">
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they&apos;ll withstand
-          everything the weather can offer
+          {description}
         </p>
       </div>
       <div className="space-y-2">
         <div className="flex items-center space-x-2">
-          <span className="text-black text-2xl font-bold">$125.00</span>
+          <span className="text-black text-2xl font-bold">${price}</span>
           <span className=" bg-pale-orange text-orange px-2 rounded-md font-bold">
-            50%
+            {discount}%
           </span>
         </div>
         <span className=" text-gray-blue font-semibold line-through">
