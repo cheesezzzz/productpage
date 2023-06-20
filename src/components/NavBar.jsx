@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import cart from "../assets/images/icon-cart.svg";
+import logo from "../assets/images/logo.svg"
 import profile from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
 import Cart from "./Cart";
@@ -31,7 +32,7 @@ export default function NavBar({
         </button>
         <div className="flex space-x-10 items-center">
           <a href="#">
-            <img src="./src/assets/images/logo.svg" alt="sneakers logo" />
+            <img src={logo} alt="sneakers logo" />
           </a>
           <div className=" space-x-5 hidden md:flex">
             <a className="hover:font-semibold duration-100" href="">
